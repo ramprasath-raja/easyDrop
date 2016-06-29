@@ -18,10 +18,25 @@ app.config(function($stateProvider, $ocLazyLoadProvider, $urlRouterProvider) {
             }
         }
     })
+    .state('manage',{
+        url:'/manage',
+        controller: 'mainCtrl',
+        templateUrl:'app/views/manage.html',
+        resolve: {
+            loadMyFiles:function($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                  name:'easydrop',
+                  files:[
+                    'app/controller/mainController.js',
+                  ]
+                })
+            }
+        }
+    })
     .state('login',{
         url:'/login',
         controller: 'loginCtrl',
-        templateUrl:'app/login.html',
+        templateUrl:'app/views/login.html',
         resolve: {
             loadMyFiles:function($ocLazyLoad) {
                 return $ocLazyLoad.load({
@@ -36,6 +51,8 @@ app.config(function($stateProvider, $ocLazyLoadProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 });
 
+
+//move to directive
 app.directive('menuToggle', function() {
     return {
         link: function(scope, element, attrs) {
