@@ -1,0 +1,44 @@
+<nav class="primaryblue_background">
+  <div class="container"> 
+    <!--Nav Logo-->
+    <div class="navbar-header"> <a href="#" class="nav_logo"><img src="content/images/nav_logo.png"> </a> </div>
+    <!--Nav Menu-->
+    
+    <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav"  ng-controller="DropdownCtrl">
+        <!--Manage-->
+        <li class="menu-list" uib-dropdown on-toggle="toggle(open)"> <a id="simple-dropdown" class="nav-menu-list" uib-dropdown-toggle>Manage<span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+              <li ng-repeat="manageOption in manageOptions"> <a href="{{manageOption.manageUserLink}}">{{manageOption.choice}} </a> </li>
+          </ul>
+        </li>
+        <!--Map-->
+        <li class="menu-list" uib-dropdown on-toggle="toggle(open)"> <a href id="simple-dropdown" class="nav-menu-list" uib-dropdown-toggle>Map<span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+            <li ng-repeat="mapOption in mapOptions"> <a href="{{mapOption.mapUserLink}}">{{mapOption.choice}} </a> </li>
+          </ul>
+        </li>
+        <!--Report-->
+        <li class="menu-list" uib-dropdown on-toggle="toggle(open)"><a href id="simple-dropdown" class="nav-menu-list" uib-dropdown-toggle>Report<span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+            <li ng-repeat="reportOption in reportOptions"> <a href="{{reportOption.reportUserLink}}">{{reportOption.choice}} </a> </li>
+          </ul>
+        </li>
+        <!--Settings-->
+        <li class="menu-list" uib-dropdown on-toggle="toggle(open)"><a href id="simple-dropdown" class="nav-menu-list" uib-dropdown-toggle>Settings<span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+            <li ng-repeat="settingsOption in settingsOptions"> <a href="{{settingsOption.settingsUserLink}}">{{settingsOption.choice}} </a> </li>
+          </ul>
+        </li>
+      </ul>
+      <!--Nav bar Right Menu-->
+      <ul class="nav navbar-nav navbar-right" ng-controller="DropdownCtrl">
+        <li class="menu-list" uib-dropdown on-toggle="toggle(open)"><a href id="simple-dropdown" class="nav-menu-list" uib-dropdown-toggle>example@gmail.com<span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="simple-dropdown">
+            <li ng-repeat="rightNavmenuOption in rightNavmenuOptions"> <a href="#/login">{{rightNavmenuOption.choice}} </a> </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

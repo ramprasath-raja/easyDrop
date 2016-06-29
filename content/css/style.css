@@ -1,0 +1,421 @@
+@charset "utf-8";
+body {
+	width: 100%;
+	height: auto;
+	font-size: 14px;
+}
+/*Color Components*/
+.primaryblue {
+	color: #168CCC;
+}
+.primarywhite {
+	color: ##fefefe;
+}
+.primaryblue_background {
+	background-color: #168CCC;
+}
+.primaryblack_background {
+	background-color: #000;
+}
+.btn.btn-default {
+	background: #fff none repeat scroll 0 0;
+	padding: 6px 10px 6px 16px;
+}
+/*Common Components*/
+.heading-weight {
+	font-weight: 200;
+	color: #333;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.header-four {
+	color: #95a5a6;
+	font-weight: 400;
+	font-size: 20px;
+}
+.part-one h1 {
+	color: #fff;
+	font-size: 45px;
+	font-weight: 200;
+	letter-spacing: 2px;
+	margin-bottom: 30px;
+	margin-top: 60px;
+}
+.well:hover {
+	border-color: #66afe9;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.075) inset, 0 0 8px rgba(102,175,233,0.6);
+}
+.margin-top-30 {
+	margin-top: 30px;
+}
+.margin-bottom-15 {
+	margin-bottom: 15px;
+}
+.margin-bottom-40 {
+	margin-bottom: 40px;
+}
+.margin-right-10 {
+	margin-right: 10px;
+}
+.padding-top-30 {
+	padding-top: 30px;
+}
+.padding-top-10 {
+	padding-top: 10px;
+}
+.padding-bottom-30 {
+	padding-bottom: 30px;
+}
+.text-align {
+	text-align: center;
+}
+.text-align-left {
+	text-align: left;
+}
+.table-content:nth-child(even) {
+	background-color: #f9f9f9;
+}
+.media-body {
+	color: #000;
+}
+.float-left {
+	float: left;
+}
+.vertical-align-bottom {
+	vertical-align: bottom;
+}
+table {
+	color: #333;
+}
+/*Main Page*/
+.part-one {
+	padding-top: 100px;
+}
+.right.carousel-control {
+	background-color: transparent;
+}
+.carousel-control.left {
+	background-color: transparent;
+}
+.contact-heading {
+	color: #95a5a6;
+	font-weight: 400;
+	font-size: 20px;
+}
+.glyphicon-chevron-left:before, .glyphicon-chevron-right:before {
+	content: "" !important;
+}
+.carousel-control.left, .carousel-control.right {
+	background-image: none !important;
+}
+.carousel-indicators {
+	position: static !important;
+}
+/*navbar*/
+nav {
+	height: 50px;
+	font-size: 14px;
+}
+.dropdown-toggle {
+	color: #fff;
+	padding: 15px 10px;
+}
+.nav-menu-list:hover, .nav-menu-list:focus {
+	background-color: #49BFFF !important;
+	text-decoration: none;
+	color: #fff;
+	text-shadow: none;
+}
+.navbar-nav > li > a {
+	font-size: 14px;
+}
+.nav_logo > img {
+	padding-top: 10px;
+}
+/*MAANAGE LIST*/
+.manage-list > a:hover {
+	text-decoration: none;
+}
+/*LOGIN*/
+.loginbox {
+	margin-top: 100px;
+}
+.border-stroke-blue-heading {
+	background: #d9edf7;
+	font-size: 16px;
+	padding-top: 12px;
+	border: 1px solid #bce8f1;
+	color: #31708f;
+	border-radius: 3px;
+}
+.border-stroke-blue {
+	border: 1px solid #bce8f1;
+	border-radius: 3px;
+}
+.login-button {
+	margin-bottom: 30px;
+}
+.addUserbutton {
+	width: 120px;
+}
+.breadcrumb > li {
+	border-top: 1px sold #000 inset groove;
+}
+.portalUser-container {
+	margin: 0 10px;
+}
+/*PORTAL USER*/
+.add-user-popup {
+	list-style-type: none;
+	padding: 0;
+}
+.nav-tabs {
+	background: #d9edf7;
+	font-size: 16px;
+	padding-top: 12px;
+	border: 1px solid #bce8f1;
+	color: #31708f;
+	border-radius: 3px;
+}
+.add-user-popup-field {
+	padding: 15px;
+}
+.close-button {
+	background: transparent;
+	color: #000;
+	opacity: 0.2;
+	text-shadow: 0 1px 0 #fff;
+}
+.modal-title {
+	float: left;
+}
+.tab-heading {
+	padding: 0px;
+	margin-left: 5px;
+}
+.tab-heading {
+	margin-left: 5px;
+}
+.status-btn {
+	background-color: #000;
+	color: #fff;
+}
+.pagination-button-group {
+	margin: 20px 0;
+}
+/*manage drivers*/
+.filter-label {
+	font-size: 13px;
+	white-space: nowrap;
+}
+.download-history {
+	width: 305px;
+}
+.download-history-option {
+	font-size: 13px;
+	background: #f5f5f5;
+	border: 1px solid #f5f5f5;
+	color: #08c;
+	padding: 3px auto 12px;
+	margin-bottom: 8px;
+	border-radius: 5px;
+	width: 90%;
+	text-align:center;
+}
+/*Company Settings*/
+.company-settings {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.company-settings-footer {
+	background: #f5f5f5;
+	border-top: 1px solid #ddd;
+}
+.popup-table-padding {
+	padding: 8px;
+}
+/*breadcrumb*/
+.btn-breadcrumb .btn.btn-default:not(:last-child):after {
+	border-left: 10px solid #fff;
+}
+.btn-breadcrumb .btn:not(:last-child):after {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 17px solid transparent;
+	border-bottom: 17px solid transparent;
+	border-left: 10px solid white;
+	position: absolute;
+	top: 50%;
+	margin-top: -17px;
+	left: 100%;
+	z-index: 3;
+}
+.btn-breadcrumb .btn:not(:last-child):before {
+	content: " ";
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 17px solid transparent;
+	border-bottom: 17px solid transparent;
+	border-left: 10px solid rgb(173, 173, 173);
+	position: absolute;
+	top: 50%;
+	margin-top: -17px;
+	margin-left: 1px;
+	left: 100%;
+	z-index: 3;
+}
+/*Map*/
+#slide {
+	position: absolute;
+	width: 40%;
+	height: 100px;
+	top: 90%;
+	background: red;
+}
+.animate-slide {
+	background: #FFFFFF;
+	border: 1px solid #ddd;
+	position: absolute;
+	width: 40%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	-webkit-transform: translate3d(0, 0, 0); /* Chrome, Safari, Opera */
+	transform: translate3d(0, 0, 0, );
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	perspective: 1000;
+}
+.animate-slide.ng-hide-add, .animate-slide.ng-hide-remove {
+	display: block!important;
+}
+.animate-slide.ng-hide-remove.ng-hide-remove-active {
+	-webkit-animation: 0.5s slide-left;
+	animation: 0.5s slide-left;
+}
+.animate-slide.ng-hide-add.ng-hide-add-active {
+	-webkit-animation: 0.5s slide-right;
+	animation: 0.5s slide-right;
+}
+.animate-slide.ng-hide {
+	left: 95%;
+	display: block!important;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes slide-left {
+ 0% {
+left:95%;
+}
+ 100% {
+left:20%;
+}
+}
+
+/* Standard syntax */
+@keyframes slide-left {
+ 0% {
+left:95%;
+}
+ 100% {
+left:20%;
+}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes slide-right {
+ 0% {
+left:20%;
+}
+ 100% {
+left:95%;
+}
+}
+
+/* Standard syntax */
+@keyframes slide-right {
+ 0% {
+left:20%;
+}
+ 100% {
+top:95%;
+}
+}
+/* Lato Fonts*/
+@font-face {
+	font-family: 'latoblack';
+	src: url('lato-black-webfont.woff2') format('woff2'), url('lato-black-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latoblack_italic';
+	src: url('lato-blackitalic-webfont.woff2') format('woff2'), url('lato-blackitalic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latobold';
+	src: url('lato-bold-webfont.woff2') format('woff2'), url('lato-bold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latobold_italic';
+	src: url('lato-bolditalic-webfont.woff2') format('woff2'), url('lato-bolditalic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latoheavy';
+	src: url('lato-heavy-webfont.woff2') format('woff2'), url('lato-heavy-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latoheavy_italic';
+	src: url('lato-heavyitalic-webfont.woff2') format('woff2'), url('lato-heavyitalic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latoitalic';
+	src: url('lato-italic-webfont.woff2') format('woff2'), url('lato-italic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latolight';
+	src: url('lato-light-webfont.woff2') format('woff2'), url('lato-light-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latolight_italic';
+	src: url('lato-lightitalic-webfont.woff2') format('woff2'), url('lato-lightitalic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latomedium';
+	src: url('lato-medium-webfont.woff2') format('woff2'), url('lato-medium-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latomedium_italic';
+	src: url('lato-mediumitalic-webfont.woff2') format('woff2'), url('lato-mediumitalic-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'latoregular';
+	src: url('lato-regular-webfont.woff2') format('woff2'), url('lato-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}

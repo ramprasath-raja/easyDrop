@@ -1,0 +1,140 @@
+
+<div > 
+  <!--BreadCrumbs-->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="btn-group btn-breadcrumb" role="group" aria-label="..."> <a href="#/manage" type="button" class="btn btn-default "><i class="glyphicon glyphicon-home"> </i></a> <a href="#/manage" type="button" class="btn btn-default">Manage</a> <a type="button" class="btn btn-default primarywhite_background ">Portal Users</a> </div>
+    </div>
+  </div>
+  <!--BreadCrumbs ends-->
+  <div class="add-user-popup-field">
+    <div ng-controller="addUserPopUpCtrl">
+      <button type="button" class="btn btn-primary" ng-click="open()" style="width:120px;">Add User</button>
+      <script type="text/ng-template" id="myModalContent.html">
+         <div class="modal-header">
+		<h4 class="modal-title">Add User</h4>
+			<button class="btn pull-right close-button" type="button" ng-click="cancel()">X</button>
+		</div>
+        <div class="modal-body">
+            <ul class="add-user-popup border-stroke-blue">
+                <li>
+                    <a href="#" ng-click="$event.preventDefault();" >
+					<uib-tabset>
+      <uib-tab index="0" class="tab-heading" heading="General">
+        <ng-form>
+          <div class="add-user-popup-field">
+            <div class="input-group padding-top-30"> <span class="input-group-addon">Email</span>
+              <input type="text" class="form-control" placeholder="Enter the person's email and click on search -->" aria-describedby="basic-addon2">
+              <span class="input-group-addon btn-warning"><i class="glyphicon glyphicon-search"></i></span> </div>
+            <div class="input-group padding-top-30"> <span class="input-group-addon">Name</span>
+              <input type="text" class="form-control" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group padding-top-30"> <span class="input-group-addon">Phone Number</span>
+              <input type="text" class="form-control" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group padding-top-30"> <span class="input-group-addon">Branch</span>
+              <select class="selectpicker form-control">
+                <option>No Branch</option>
+              </select>
+            </div>
+            <div class="input-group padding-top-30 padding-bottom-30"> <span class="input-group-addon">User Type</span>
+              <select class="selectpicker form-control">
+                <option>Plese Select</option>
+              </select>
+            </div>
+          </div>
+          
+        </ng-form>
+      </uib-tab>
+    </uib-tabset></a>
+                </li>
+            </ul>
+           
+        </div>
+        <div class="modal-footer">
+			<button class="btn btn-info" type="button" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-success" type="button" ng-click="ok()">Save</button>
+            
+        </div>
+    </script><!--script--> 
+      <script type="text/ng-template" id="myModalCfghontent.html">
+         <div class="modal-header">
+		<h4 class="modal-title">Add User</h4>
+			<button class="btn pull-right close-button" type="button" ng-click="cancel()">X</button>
+		</div>
+        <div class="modal-body">
+            <ul class="add-user-popup border-stroke-blue">
+                <li>
+                    <a href="#" ng-click="$event.preventDefault();" >
+					<uib-tabset>
+      <uib-tab index="0" class="tab-heading" heading="General">
+        <ng-form>
+          <div class="add-user-popup-field">
+            <div class="input-group padding-top-30"> <span class="input-group-addon">Email</span>
+              <input type="text" class="form-control" placeholder="Enter the person's email and click on search -->" aria-describedby="basic-addon2">
+              <span class="input-group-addon btn-warning"><i class="glyphicon glyphicon-search"></i></span> </div>
+            <div class="input-group padding-top-30"> <span class="input-group-addon">Name</span>
+              <input type="text" class="form-control" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group padding-top-30"> <span class="input-group-addon">Phone Number</span>
+              <input type="text" class="form-control" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group padding-top-30"> <span class="input-group-addon">Branch</span>
+              <select class="selectpicker form-control">
+                <option>No Branch</option>
+              </select>
+            </div>
+            <div class="input-group padding-top-30 padding-bottom-30"> <span class="input-group-addon">User Type</span>
+              <select class="selectpicker form-control">
+                <option>Plese Select</option>
+              </select>
+            </div>
+          </div>
+          
+        </ng-form>
+      </uib-tab>
+    </uib-tabset></a>
+                </li>
+            </ul>
+           
+        </div>
+        <div class="modal-footer">
+			<button class="btn btn-info" type="button" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-success" type="button" ng-click="ok()">Save</button>
+            
+        </div>
+    </script> 
+      
+      <!--User Detail Table View-->
+      <div ng-controller="portalUserDetailCtrl" class="margin-top-30">
+        <table width="100%" class="table-bordered table-condensed">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">User ID</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">User Type</th>
+            <th scope="col">Branch</th>
+          </tr>
+          <tr  ng-repeat="portalUserDetail in portalUserDetails" class="table-content">
+            <td scope="col" nowrap><button type="button" style="width:45px;" class="btn btn-xs btn-info" ng-click="open1()">Edit</button></td>
+            <td>{{portalUserDetail.userId}}</td>
+            <td>{{portalUserDetail.userName}}</td>
+            <td>{{portalUserDetail.Phone}}</td>
+            <td>{{portalUserDetail.userType}}</td>
+            <td>{{portalUserDetail.branch}}</td>
+          </tr>
+        </table>
+        <div class="float-left">
+          <uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"  rotate="false"></uib-pagination>
+        </div>
+        <div class="btn-group pull-right pagination-button-group" role="group" >
+          <button type="button" class="btn btn-default">10</button>
+          <button type="button" class="btn btn-default">25</button>
+          <button type="button" class="btn btn-default">50</button>
+          <button type="button" class="btn btn-default">100</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+
+<div class="container margin-top-30" ng-controller="MainController">
+  <div class="manage-list" ng-repeat="manage in manages"> <a href="{{manage.sourceLink}}">
+    <div class="well">
+      <div class="media">
+        <div class="media-left"> <img class="media-object" src="{{manage.manageImage}}" alt="/"></div>
+        <div class="media-body">
+          <h4 class="media-heading">{{manage.heading}}</h4>
+          <p>{{manage.content}}</p>
+        </div>
+      </div>
+    </div>
+    </a> </div>
+</div>

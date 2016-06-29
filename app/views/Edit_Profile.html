@@ -1,0 +1,44 @@
+<div > 
+  <!--BreadCrumbs-->
+  <div class="panel panel-default">
+  <div class="panel-heading">
+  <div class="btn-group btn-breadcrumb" role="group" aria-label="..."> 
+      <a href="#/manage" type="button" class="btn btn-default "><i class="glyphicon glyphicon-home"> </i></a> 
+      <a type="button" class="btn btn-default primarywhite_background ">Edit Profile</a> 
+  </div>
+  </div>
+  </div>
+  <!--BreadCrumbs ends-->
+  <div class="company-settings">
+     <div class="modal-body">
+      <ul class="add-user-popup border-stroke-blue">
+        <li> <a href="#" ng-click="$event.preventDefault();" >
+          <uib-tabset>
+            <uib-tab index="0" class="tab-heading" heading="General">
+              <ng-form>
+                <div class="add-user-popup-field">
+                  <div class="input-group padding-top-30"> <span class="input-group-addon">Email</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon2">
+                   </div>
+                  <div class="input-group padding-top-10"> <span class="input-group-addon">Name</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon2">
+                  </div>
+                  <div class="input-group padding-top-10"> <span class="input-group-addon">Phone Number</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon2">
+                  </div>
+                
+                  
+                </div>
+              </ng-form>
+            </uib-tab>
+          </uib-tabset>
+          </a> </li>
+          <div class="modal-footer company-settings-footer">
+      <button class="btn btn-success" type="button" style="width:100px;" ng-click="ok()">Save</button>
+    </div>
+      </ul>
+      
+    </div>
+    
+  </div>
+</div>

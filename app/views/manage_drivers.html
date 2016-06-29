@@ -1,0 +1,163 @@
+
+<div > 
+  <!--BreadCrumbs-->
+   <div class="panel panel-default">
+  <div class="panel-heading">
+  <div class="btn-group btn-breadcrumb" role="group" aria-label="..."> 
+      <a href="manage.html" type="button" class="btn btn-default "><i class="glyphicon glyphicon-home"> </i></a> 
+      <a href="manage.html" type="button" class="btn btn-default">Manage</a> 
+      <a type="button" class="btn btn-default primarywhite_background ">Drivers</a> 
+  </div>
+  </div>
+  </div>
+  <!--BreadCrumbs ends-->
+  <div class="add-user-popup-field">
+    <div ng-controller="addDriverPopUpCtrl">
+      <button type="button" class="btn btn-primary" ng-click="open()">Add Driver</button>
+       <button type="button" class="btn btn-warning" ng-click="open1()">Filters</button>
+      <script type="text/ng-template" id="driverDetail.html">
+        <div class="modal-header">
+		<h4 class="modal-title">Add User</h4>
+			<button class="btn pull-right close-button" type="button" ng-click="cancel()">X</button>
+		</div>
+        <div class="modal-body">
+            <ul class="add-user-popup border-stroke-blue">
+                <li>
+                    <a href="#" ng-click="$event.preventDefault();" >
+					<uib-tabset>
+      <uib-tab index="0" class="tab-heading" heading="General">
+        <ng-form>
+          <div class="add-user-popup-field">
+            <div class="input-group padding-top-30"> <span class="input-group-addon">Device ID</span>
+              <input type="text" class="form-control" placeholder="Enter the person's email and click on search -->" aria-describedby="basic-addon2">
+              <span class="input-group-addon btn-warning"><i class="glyphicon glyphicon-search"></i></span> </div>
+            <div class="input-group padding-top-10"> <span class="input-group-addon">Nickname</span>
+              <input type="text" class="form-control" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group padding-top-10"> <span class="input-group-addon">Driver Name</span>
+              <input type="text" class="form-control" aria-describedby="basic-addon2">
+            </div>
+           <div class="input-group padding-top-10"> <span class="input-group-addon">Phone</span>
+              <input type="text" class="form-control" aria-describedby="basic-addon2">
+            </div>
+			<div class="input-group padding-top-10"> <span class="input-group-addon">Company Name</span>
+              <input type="text" class="form-control" aria-describedby="basic-addon2">
+            </div>
+			<div class="input-group padding-top-10"> <span class="input-group-addon">Your Ref</span>
+              <input type="text" class="form-control" aria-describedby="basic-addon2">
+            </div>
+            <div class="input-group padding-top-10 padding-bottom-30"> <span class="input-group-addon">Branch</span>
+              <select class="selectpicker form-control">
+                <option>Plese Select</option>
+              </select>
+            </div>
+          </div>
+          
+        </ng-form>
+      </uib-tab>
+    </uib-tabset></a>
+                </li>
+            </ul>
+           
+        </div>
+        <div class="modal-footer">
+			<button class="btn btn-info" type="button" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-success" type="button" ng-click="ok()">Save</button>
+            
+        </div>
+    </script><!--script-->
+    <!--Filter Script--> 
+    <script type="text/ng-template" id="filterDetail.html">
+        <div class="modal-header">
+		<h4 class="modal-title">Filters</h4>
+			<button class="btn pull-right close-button" type="button" ng-click="cancel()">X</button>
+		</div>
+        <div class="modal-body">
+		<div class="row">
+			<div class="col-md-2"><label class="filter-label">Device ID</label></div>
+			<div class="col-md-10"><input type="text" class="form-control"></div>
+		</div>
+      	<div class="row">
+			<div class="col-md-2"><label class="filter-label">Nickname</label></div>
+			<div class="col-md-10"><input type="text" class="form-control"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"><label class="filter-label">Driver Name</label></div>
+			<div class="col-md-10"><input type="text" class="form-control"></div>
+		</div>
+        <div class="row">
+			<div class="col-md-2"><label class="filter-label">Your Ref</label></div>
+			<div class="col-md-10"><input type="text" class="form-control"></div>
+		</div>
+      	<div class="row">
+			<div class="col-md-2"><label class="filter-label">Phone</label></div>
+			<div class="col-md-10"><input type="text" class="form-control"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"><label class="filter-label">Company Name</label></div>
+			<div class="col-md-10"><input type="text" class="form-control"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"><label class="filter-label">Device Type</label></div>
+			<div class="col-md-10"><input type="text" class="form-control"></div>
+		</div>
+      	<div class="row">
+			<div class="col-md-2"><label class="filter-label">App Name</label></div>
+			<div class="col-md-10"><input type="text" class="form-control"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"><label class="filter-label">OS Version</label></div>
+			<div class="col-md-10"><input type="text" class="form-control"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"><label class="filter-label">App Version</label></div>
+			<div class="col-md-10"><input type="text" class="form-control"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"><label class="filter-label">Branch</label></div>
+			<div class="col-md-10"><input type="text" class="form-control"></div>
+		</div>
+		   
+        </div>
+        <div class="modal-footer">
+			<button class="btn btn-info" type="button" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-success" type="button" ng-click="ok()">Save</button>
+            
+        </div>
+    </script>
+    <!--Filter Script End-->
+    </div>
+    <!--User Detail Table View-->
+    <div ng-controller="userDetailCtrl" class="margin-top-30">
+      <table width="100%" class="table-bordered table-condensed">
+        <tr>
+          <th  scope="col">Device ID</th>
+          <th scope="col">Nickname</th>
+          <th scope="col">Driver Name</th>
+          <th scope="col">App Name</th>
+          <th scope="col">OS Version</th>
+          <th scope="col">App Version</th>
+          <th scope="col">Branch</th>	
+        </tr>
+        <tr ng-repeat="userDetail in userDetails" class="table-content">
+          <td>{{userDetail.deviceId}}</td>
+          <td>{{userDetail.nickName}}</td>
+          <td>{{userDetail.driverName}}</td>
+          <td>{{userDetail.appName}}</td>
+          <td>{{userDetail.OSVersion}}</td>
+          <td >{{userDetail.appVersion}}</td>
+          <td>{{userDetail.branch}}</td>
+        </tr>
+      </table>
+       <div class="float-left">
+   <uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"  rotate="false"></uib-pagination>
+ </div>
+	   <div class="btn-group pull-right pagination-button-group" role="group" >
+  <button type="button" class="btn btn-default">10</button>
+  <button type="button" class="btn btn-default">25</button>
+  <button type="button" class="btn btn-default">50</button>
+  <button type="button" class="btn btn-default">100</button>
+</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+<!--BreadCrumbs-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+  <div class="btn-group btn-breadcrumb" role="group" aria-label="..."> 
+      <a href="#/manage" type="button" class="btn btn-default "><i class="glyphicon glyphicon-home"> </i></a> 
+      <a href="#/manage" type="button" class="btn btn-default">Manage</a> 
+      <a type="button" class="btn btn-default primarywhite_background ">Runs</a> 
+  </div>
+  </div>
+  </div>
+<!--BreadCrumbs ends-->
+<div>
+  <div ng-controller="viewRunDeliveryDetailPopUpCtrl">
+    <div ng-controller="datePickermanageRunCtrl" class="margin-bottom-15">
+      <div class="float-left col-md-2">
+        <div class="input-group col-md-12" >
+          <input type="text" class="form-control" uib-datepicker-popup="{{format}}"ng-click="open1()"  ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" alt-input-formats="altInputFormats" />
+          <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span> </div>
+      </div>
+      <button type="button" class="btn btn-success"><i class="glyphicon glyphicon-refresh"></i></button>
+    </div>
+    <script type="text/ng-template" id="viewRunDeliverrDetail.html">
+    
+        <div class="modal-header">
+          <h4 class="modal-title">View Deliveries - 004_SYD_WED_Macquarie/Pitt</h4>
+          <button class="btn pull-right close-button" type="button" ng-click="cancel()">X</button>
+        </div>
+        <div class="modal-body">
+          <ul class="add-user-popup border-stroke-blue">
+            <li> <a href="#" ng-click="$event.preventDefault();" > 
+              <!--Detail Pop Up-->
+            <uib-tabset>
+			  <uib-tab index="0" class="tab-heading" heading="Detail">
+			  <div class="padding-top-30">
+			   <table class="table-hover" width="100%" border="0" ng-controller="viewRunDeliveryDetailPopUpCtrl">
+  <tr class="table-bottom-border text-align-left">
+    <td>Seq</td>
+    <td>Job ID</td>
+    <td>Customer Name</td>
+    <td>Address 1</td>
+    <td>City</td>
+    <td>Delivered Date</td>
+  </tr>
+  <tr class="table-content table-bottom-border" ng-repeat="viewDeliver in runDeliveryDetails">
+    <td class="popup-table-padding">{{viewDeliver.seq}}</td>
+    <td class="popup-table-padding">{{viewDeliver.jobID}}</td>
+   <td class="popup-table-padding">{{viewDeliver.customerName}}</td>
+   <td class="popup-table-padding">{{viewDeliver.address}}</td>
+   <td class="popup-table-padding">{{viewDeliver.city}}</td>
+    <td class="popup-table-padding">{{viewDeliver.deliveredDate}}</td>
+  </tr>
+</table>
+</div>
+			  </uib-tab>
+	 		 </uib-tabset>
+              </a> </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-info" type="button" ng-click="cancel()">Close</button>
+		  </div>
+       
+      </script> 
+    <!--script--> 
+     <!--User Detail Table View-->
+    <div ng-controller="manageRunDetailCtrl" style="overflow-x:auto;" class="add-user-popup-field">
+      <table  width="100%" class="table-bordered table-condensed">
+        <tr>
+          <th class="table-padding" scope="col"></th>
+          <th class="table-padding" scope="col">Run</th>
+          <th class="table-padding" scope="col">Scheduled Date</th>
+          <th class="table-padding" scope="col">Driver</th>
+        </tr>
+        <tr ng-repeat="runDetail in runDeliveryDetails">
+          <td scope="col"><button type="button" style="width:110px;" class="btn btn-xs btn-info"  ng-click="open('lg')">View Deliveries</button></td>
+          <td class="table-padding">{{runDetail.RunDetail}}</td>
+          <td class="table-padding">{{runDetail.scheduleDate}}</td>
+          <td class="table-padding"><select>
+              <option>{{runDetail.driver}}</option>
+            </select></td>
+        </tr>
+      </table>
+       <div class="float-left">
+   <uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"  rotate="false"></uib-pagination>
+ </div>
+	   <div class="btn-group pull-right pagination-button-group" role="group" >
+  <button type="button" class="btn btn-default">10</button>
+  <button type="button" class="btn btn-default">25</button>
+  <button type="button" class="btn btn-default">50</button>
+  <button type="button" class="btn btn-default">100</button>
+</div>
+    </div>
+  </div>
+</div>

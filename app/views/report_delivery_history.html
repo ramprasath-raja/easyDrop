@@ -1,0 +1,402 @@
+<div> 
+  <!--BreadCrumbs-->
+  <div class="panel panel-default">
+  <div class="panel-heading">
+  <div class="btn-group btn-breadcrumb" role="group" aria-label="..."> 
+      <a href="#/manage" type="button" class="btn btn-default "><i class="glyphicon glyphicon-home"> </i></a> 
+      <a type="button" class="btn btn-default">Reports</a> 
+      <a type="button" class="btn btn-default primarywhite_background ">Delivery History</a> 
+  </div>
+  </div>
+  </div>
+  <!--BreadCrumbs ends-->
+  <div class="add-user-popup-field">
+    <div ng-controller="viewDeliverHistoryDetailCtrl">
+      <div ng-controller="deliveryHistoryDatepickerPopupCtrl" class="margin-bottom-15">
+        <div class="input-group col-md-2" > <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+          <input type="text" class="form-control" uib-datepicker-popup="{{format}}"ng-click="open1()"  ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" alt-input-formats="altInputFormats" />
+          <span class="input-group-btn">
+          <button type="button" class="btn btn-success"><i class="glyphicon glyphicon-refresh"></i></button>
+          </span> </div>
+      </div>
+     <!--RUnDetail Script-->
+      <script type="text/ng-template" id="runDetail.html">
+    
+        <div class="modal-header">
+          <h4 class="modal-title">View Deliveries - 004_SYD_WED_Macquarie/Pitt</h4>
+          <button class="btn pull-right close-button" type="button" ng-click="cancel()">X</button>
+        </div>
+        <div class="modal-body">
+          <ul class="add-user-popup border-stroke-blue">
+            <li> <a href="#" ng-click="$event.preventDefault();" > 
+              <!--Detail Pop Up-->
+            <uib-tabset>
+			  <uib-tab index="0" class="tab-heading" heading="Detail">
+			  <div class="padding-top-30">
+			   <table class="table-hover" width="100%" border="0" ng-controller="viewDeliverHistoryDetailCtrl">
+  <tr class="table-bottom-border text-align-left">
+    <td>Seq</td>
+    <td>Job ID</td>
+    <td>Customer Name</td>
+    <td>Address 1</td>
+    <td>City</td>
+    <td>Delivered Date</td>
+  </tr>
+  <tr class="table-content table-bottom-border" ng-repeat="viewRunDeliver in runHistoryDetails">
+    <td class="popup-table-padding">{{viewRunDeliver.seq}}</td>
+    <td class="popup-table-padding">{{viewRunDeliver.jobID}}</td>
+   <td class="popup-table-padding">{{viewRunDeliver.customerName}}</td>
+   <td class="popup-table-padding">{{viewRunDeliver.address}}</td>
+   <td class="popup-table-padding">{{viewRunDeliver.city}}</td>
+    <td class="popup-table-padding">{{viewRunDeliver.deliveredDate}}</td>
+  </tr>
+</table>
+</div>
+			  </uib-tab>
+	 		 </uib-tabset>
+              </a> </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-info" type="button" ng-click="cancel()">Close</button>
+		  </div> 
+      </script> 
+      <script type="text/ng-template" id="deliverrDetail.html">
+    
+        <div class="modal-header">
+          <h4 class="modal-title">Add Delivery</h4>
+          <button class="btn pull-right close-button" type="button" ng-click="cancel()">X</button>
+        </div>
+        <div class="modal-body">
+          <ul class="add-user-popup border-stroke-blue">
+            <li> <a href="#" ng-click="$event.preventDefault();" > 
+              <!--Detail Pop Up-->
+            <uib-tabset>
+      <uib-tab index="0" class="tab-heading" heading="Details">
+        <ng-form>
+          <div>
+            <div class="row padding-top-10"> 
+                        <!--Run ID input field-->
+                        <div class="col-sm-4">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Run ID</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!--Run Name input field-->
+                        <div class="col-sm-8">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Run Name</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!----> 
+                      </div>
+					  <!--row 1 end-->
+					   <!--2-->
+                      <div class="row padding-top-10"> 
+                        <!--Delivery ID input field-->
+                        <div class="col-sm-4">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Delivery ID</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!----> 
+                      </div>
+                      <!--row2 end--> 
+					  <div class="row padding-top-10"> 
+                        <!--Address1 field-->
+                        <div class="col-sm-12">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Address 1</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!----> 
+                        <!--Address2 field-->
+                        <div class="col-sm-12  padding-top-10">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Address 2</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!----> 
+                      </div>
+					    <!--row3 end--> 
+                      <!--4-->
+                      <div class="row  padding-top-10"> 
+                        <!--City field-->
+                        <div class="col-sm-6">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">City</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!----> 
+                        <!--State field-->
+                        <div class="col-sm-3">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">State</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!----> 
+                        <!--Post Code field-->
+                        <div class="col-sm-3">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Post Code</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!----> 
+                      </div>
+                      <!--row4 end--> 
+                      <!--5-->
+                      <div class="row  padding-top-10 padding-bottom-30"> 
+                        <!--Address1 field-->
+                        <div class="col-sm-12">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Country</span>
+                            <select name="country" class="form-control">
+                              <option>India</option>
+                            </select>
+                          </div>
+                        </div>
+                        <!----> 
+                      </div>
+                      <!--5 end--> 
+          </div>
+          </ng-form>
+      </uib-tab>
+	  <!--tab 1 end-->
+	  <!--tab2 Customer Tab-->
+                <uib-tab index="1" class="tab-heading" heading="Customer">
+                  <ng-form>
+                    <div> 
+                      <!--1-->
+                      <div class="row  padding-top-30"> 
+                        <!--Customer ID input field-->
+                        <div class="col-sm-4">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Customer ID</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!--Customer Name input field-->
+                        <div class="col-sm-8">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Customer Name</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!----> 
+                      </div>
+                      <!--row1 end--> 
+                      <!--2-->
+                      <div class="row padding-top-10"> 
+                        <!--DContact Name input field-->
+                        <div class="col-sm-12">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Contact Name</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!----> 
+                      </div>
+                      <!--row2 end--> 
+                      <!--3-->
+                      <div class="row padding-top-10 padding-bottom-30"> 
+                        <!--Phone field-->
+                        <div class="col-sm-6">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Phone</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!----> 
+                        <!--Email field-->
+                        <div class="col-sm-6">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Email</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                        <!----> 
+                      </div>
+                      <!--row3 end-->
+					 </div>
+                  </ng-form>
+                </uib-tab>
+				<!--tab 2 end-->
+				 <!--tab3 Allocation Tab-->
+                <uib-tab index="2" class="tab-heading" heading="Allocation">
+                  <ng-form>
+                    <div> 
+                      <!--1-->
+                      <div class="row  padding-top-30"> 
+                        <!--Scheduled Date * input field-->
+                        <div class="col-sm-6">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Scheduled Date&nbsp;*</span>
+                            <input type="text" class="form-control"  aria-describedby="basic-addon2">
+                          </div>
+                        </div>
+                      </div>
+                      <!--row1 end--> 
+                      <!--2-->
+                      <div class="row padding-top-10"> 
+                        <!--DContact Name input field-->
+                        <div class="col-sm-8">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon">Driver</span>
+                           <select name="driver" class="form-control">
+						   	<option>--Please Select-- </option>
+						   </select>
+                          </div>
+                        </div>
+                        <!----> 
+                      </div>
+                      <!--row2 end--> 
+                      <!--3-->
+                      <div class="row padding-top-10 padding-bottom-30"> 
+                      <!--DContact Name input field-->
+                        <div class="col-sm-12">
+                          <div class="input-group input-group-sm"> <span class="input-group-addon" >Delivery Instructions</span>
+                          <textarea class="form-control" row="12"></textarea>
+                          </div>
+                        </div>
+                        <!----> 
+                      </div>
+                      <!--row3 end-->
+					 </div>
+                  </ng-form>
+                </uib-tab>
+				<!--tab 2 end-->
+				<uib-tab index="3" class="tab-heading" heading="Products">
+                <div ng-controller="addProductDetailCtrl" class="padding-top-10">
+      <button type="button" class="btn btn-warning btn-xs" ng-click="addProductDetail()">Add Items</button>
+      <table width="100%">
+        <tr class="info">
+          <th width="20%">Product ID</th>
+          <th width="60%">Descripion&nbsp;*</th>
+          <th  width="8%">Qty&nbsp;*</th>
+		   <th width="9%">Barcode</th>
+          <th width="3%">&nbsp;</th>
+        </tr>
+        <tr ng-repeat="deliverProductDetail in deliverProductDetails">
+          <td> <input type="text" class="form-control"></td>
+          <td><input type="text" class="form-control"></td>
+          <td><input type="text" class="form-control"></td>
+          <td><input type="text" class="form-control"></td>
+          <td><button type="button" class="btn btn-default" ng-click="removeProduct($index)"><i class="glyphicon glyphicon-trash"> </i></button></td>
+        </tr>
+      </table>
+    </div>
+                </uib-tab>
+				<!--tab 3 end-->
+				<uib-tab index="4" class="tab-heading" heading="POD">
+				<div class="row padding-top-10">
+					<div class="col-md-6">
+					<div class="panel panel-default">
+					  <div class="panel-heading">Photo</div>
+						  <div class="panel-body">
+						  </div>
+					</div>
+					</div>	
+					<div class="col-md-6">
+					<div class="panel panel-default">
+					  <div class="panel-heading">Signature</div>
+						  <div class="panel-body">
+						  </div>
+					</div>
+					</div>			
+				</div>
+				</uib-tab>
+    </uib-tabset>
+              </a> </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-info" type="button" ng-click="cancel()">Close</button>
+         
+        </div>
+       
+      </script>
+      <!--script--> 
+      <!--User Detail Table View-->
+    <div ng-controller="deliveryHistoryCtrl" class="table-responsive">
+      <table width="100%" class="table-bordered table-condensed">
+        <tr>
+          <th class="table-padding" scope="col" nowrap></th>
+          <th class="table-padding" nowrap></th>
+          <th class="text-align-left table-padding" scope="col" nowrap>Run Name <br>
+            <select>
+              <option>004_SYD_WED_Macquarie/Pitt</option>
+              
+            </select>
+          </th>
+          <th class="table-padding" scope="col" nowrap>Seq <br>
+            <select>
+              <option>1</option>
+            </select>
+          </th>
+          <th class="table-padding" scope="col" nowrap>Job ID <br>
+            <select>
+              <option>598424</option>
+            </select>
+          </th>
+          <th class="table-padding" scope="col" nowrap>Customer Name <br>
+            <select>
+              <option>All</option>
+              </select>
+          </th>
+          <th class="table-padding" scope="col" nowrap>Address 1 <br>
+            <select>
+              <option>All</option>
+              </select>
+          </th>
+          <th class="table-padding" scope="col" nowrap>City <br>
+            <select>
+              <option>All</option>
+            </select>
+          </th>
+          <th class="table-padding" scope="col"  nowrap>Status <br>
+            <select>
+              <option>All</option>
+            </select>
+          </th>
+          <th class="table-padding" scope="col" nowrap>Driver<br>
+            <select>
+              <option>All</option>
+            </select>
+          </th>
+          <th class="table-padding" scope="col" nowrap>Scheduled Date <br>
+            <select>
+              <option>All</option>
+            </select>
+          </th>
+          <th class="table-padding" scope="col" nowrap>Delivered  Date</th>
+           <th class="table-padding" scope="col" nowrap>Received by<br>
+            <select>
+              <option>All</option>
+            </select>
+          </th>
+          <th class="table-padding" scope="col" nowrap>Delivered  Comments</th>
+        </tr>
+        <tr class="table-content" ng-repeat="deliverHistoryDetail in deliverHistories" >
+          <td scope="col" nowrap><button type="button" style="width:85px;" class="btn btn-xs btn-success" ng-click="open('lg')">Run Details</button></td>
+         <td scope="col" nowrap><button type="button" style="width:85px;" class="btn btn-xs btn-info"  ng-click="open1('lg')">Job Details</button></td>
+          <td class="table-padding"  nowrap>{{deliverHistoryDetail.runName}}</td>
+          <td class="table-padding" nowrap>{{deliverHistoryDetail.seq}}</td>
+          <td class="table-padding" nowrap>{{deliverHistoryDetail.jobId}}</td>
+          <td class="table-padding" nowrap>{{deliverHistoryDetail.customerName}}</td>
+          <td class="table-padding" nowrap>{{deliverHistoryDetail.address}}</td>
+          <td class="table-padding" nowrap>{{deliverHistoryDetail.city}}</td>
+          <td class="table-padding" nowrap><a href="#" class="btn btn-danger btn-xs status-btn">{{deliverHistoryDetail.status}}</a></td>
+          <td class="table-padding" nowrap>{{deliverHistoryDetail.driver}}</td>
+          <td class="table-padding" nowrap>{{deliverHistoryDetail.scheduleDate}}</td>
+          <td class="table-padding" nowrap>{{deliverHistoryDetail.DeliveredDate}}</td>
+          <td class="table-padding" nowrap>{{deliverHistoryDetail.receivedBy}}</td>
+          <td class="table-padding" nowrap>{{deliverHistoryDetail.deliverComments}}</td>
+        </tr>
+      </table>
+      <div class="float-left">
+   <uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"  rotate="false"></uib-pagination>
+ </div>
+	   <div class="btn-group pull-right pagination-button-group" role="group" >
+  <button type="button" class="btn btn-default">10</button>
+  <button type="button" class="btn btn-default">25</button>
+  <button type="button" class="btn btn-default">50</button>
+  <button type="button" class="btn btn-default">100</button>
+</div>
+    </div>
+      </div>
+  </div>
+</div>
