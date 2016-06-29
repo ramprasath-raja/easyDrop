@@ -20,11 +20,11 @@ app.factory("apiFactory", ['$http','$rootScope','ED_CONFIG',
         }
                 
         var obj = {};
-        obj.get = function (q) {
+        obj.get = function (q, object) {
             if (currentUserToken) {
                 $http.defaults.headers.common['Authorization'] = 'bearer ' + currentUserToken; 
             }
-            return $http.get(serviceBase + q).then(function (results) {
+            return $http.get(serviceBase + q + object).then(function (results) {
                 return results.data;
             });
         };
